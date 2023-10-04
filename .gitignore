@@ -18,6 +18,8 @@ bin/
 !**/src/test/**/bin/
 
 ### IntelliJ IDEA ###
+application-mysql.yml
+
 .idea
 *.iws
 *.iml
@@ -35,6 +37,3 @@ out/
 
 ### VS Code ###
 .vscode/
-
-application-mysql.yml
-
