@@ -2,10 +2,7 @@ package com.sarangBang.sarangBang.member.dto;
 
 import com.sarangBang.sarangBang.member.domain.Mbti;
 import com.sarangBang.sarangBang.member.domain.Sex;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.Email;
@@ -15,6 +12,7 @@ import javax.validation.constraints.NotEmpty;
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
 public class MemberJoinFormDto {
 
