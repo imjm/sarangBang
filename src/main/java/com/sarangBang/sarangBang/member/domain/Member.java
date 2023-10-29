@@ -38,6 +38,9 @@ public class Member {
     @Enumerated(EnumType.STRING)
     private Sex sex;
 
+    @Enumerated(EnumType.STRING)
+    private Role role;
+
     private int count;
 
     private boolean isMatched;
