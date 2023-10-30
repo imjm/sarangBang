@@ -53,6 +53,7 @@ public class Member {
                 .college(form.getCollege())
                 .sex(form.getSex())
                 .mbti(form.getMbti())
+                .role(Role.USER)
                 .build();
         return member;
     }
