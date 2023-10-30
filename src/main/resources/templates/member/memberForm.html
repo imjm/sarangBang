@@ -45,6 +45,11 @@
             <input type="password" th:field="*{password}" class="form-control" placeholder="비밀번호 입력">
             <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="fieldError">Incorrect data</p>
         </div>
+        <div class="form-group py-2">
+            <label th:for="password">단과대</label>
+            <input type="text" th:field="*{college}" class="form-control" placeholder="단과대 입력">
+            <p th:if="${#fields.hasErrors('college')}" th:errors="*{college}" class="fieldError">Incorrect data</p>
+        </div>
         <div style="text-align:center" class="py-3">
             <button type="submit" class="btn btn-outline-dark">Submit</button>
             <button type="button" class="btn btn-outline-dark" onclick="history.back();">Cancel</button>
