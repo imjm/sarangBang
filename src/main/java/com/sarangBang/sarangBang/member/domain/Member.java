@@ -32,8 +32,7 @@ public class Member {
     @Column(nullable = false)
     private String college;
 
-    @Enumerated(EnumType.STRING)
-    private Mbti mbti;
+    private String mbtiCode;
 
     @Enumerated(EnumType.STRING)
     private Sex sex;
@@ -52,7 +51,7 @@ public class Member {
                 .username(form.getUsername())
                 .college(form.getCollege())
                 .sex(form.getSex())
-                .mbti(form.getMbti())
+                .mbtiCode(form.getMbtiCode())
                 .role(Role.USER)
                 .build();
         return member;
