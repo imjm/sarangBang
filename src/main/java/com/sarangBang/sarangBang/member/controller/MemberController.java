@@ -1,6 +1,8 @@
 package com.sarangBang.sarangBang.member.controller;
 
+import com.sarangBang.sarangBang.member.domain.MbtiCode;
 import com.sarangBang.sarangBang.member.domain.Member;
+import com.sarangBang.sarangBang.member.domain.Sex;
 import com.sarangBang.sarangBang.member.dto.MemberJoinFormDto;
 import com.sarangBang.sarangBang.member.service.MemberService;
 import lombok.RequiredArgsConstructor;
@@ -9,12 +11,11 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
+import java.util.List;
 
 @Slf4j
 @Controller
@@ -30,6 +31,18 @@ public class MemberController {
         log.info("memberJoinForm");
         model.addAttribute("memberJoinFormDto", new MemberJoinFormDto());
         return "member/memberForm";
+    }
+
+    @ModelAttribute("mbtiCodes")
+    public List<MbtiCode> mbtiCodes() {
+        List<MbtiCode> mbtiCodes = new ArrayList<>();
+        setMbticodes(mbtiCodes);
+        return mbtiCodes;
+    }
+
+    @ModelAttribute("sexes")
+    public Sex[] sexes() {
+        return Sex.values();
     }
 
     @PostMapping("/join")
@@ -61,5 +74,23 @@ public class MemberController {
         return "redirect:/members/login";
     }
 
+    private void setMbticodes(List<MbtiCode> mbtiCodes) {
+        mbtiCodes.add(new MbtiCode("ISTJ", "istj"));
+        mbtiCodes.add(new MbtiCode("ISFJ", "isfj"));
+        mbtiCodes.add(new MbtiCode("INFJ", "infj"));
+        mbtiCodes.add(new MbtiCode("INTJ", "intj"));
+        mbtiCodes.add(new MbtiCode("ISTP", "istp"));
+        mbtiCodes.add(new MbtiCode("ISFP", "isfp"));
+        mbtiCodes.add(new MbtiCode("INFP", "infp"));
+        mbtiCodes.add(new MbtiCode("INTP", "intp"));
+        mbtiCodes.add(new MbtiCode("ESTP", "estp"));
+        mbtiCodes.add(new MbtiCode("ESFP", "esfp"));
+        mbtiCodes.add(new MbtiCode("ENFP", "enfp"));
+        mbtiCodes.add(new MbtiCode("ENTP", "entp"));
+        mbtiCodes.add(new MbtiCode("ESTJ", "estj"));
+        mbtiCodes.add(new MbtiCode("ESFJ", "esfj"));
+        mbtiCodes.add(new MbtiCode("ENFJ", "enfj"));
+        mbtiCodes.add(new MbtiCode("ENTJ", "entj"));
+    }
 
 }
