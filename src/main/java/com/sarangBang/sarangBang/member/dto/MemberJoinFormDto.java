@@ -1,6 +1,5 @@
 package com.sarangBang.sarangBang.member.dto;
 
-import com.sarangBang.sarangBang.member.domain.Mbti;
 import com.sarangBang.sarangBang.member.domain.Sex;
 import lombok.*;
 import org.hibernate.validator.constraints.Length;
@@ -30,7 +29,7 @@ public class MemberJoinFormDto {
     @NotBlank(message = "단과대는 필수 입력 값입니다.")
     private String college;
 
-    private Mbti mbti;
+    private String mbtiCode;
 
     private Sex sex;
 }
