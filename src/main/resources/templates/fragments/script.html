@@ -7,6 +7,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <script th:src="@{/bootstrap/js/scripts.js}"></script>
+    <script th:if="${loginErrorMsg}" th:inline="javascript">
+        //로그인 실패시 에러 메시지 출
+        // Thymeleaf에서 전달한 loginErrorMsg를 alert로 표시
+        alert('[(${loginErrorMsg})]');
+
+    </script>
 
 </th:block>
 </html>

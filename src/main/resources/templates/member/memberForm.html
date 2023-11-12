@@ -12,21 +12,6 @@
     </style>
 </th:block>
 
-<!-- 사용자 스크립트 추가 -->
-<th:block layout:fragment="script">
-
-    <script th:inline="javascript">
-        //회원가입 실패시 에러 메시지 출력
-        $(document).ready(function(){
-            var errorMessage = [[${errorMessage}]];
-            if(errorMessage != null){
-                alert(errorMessage);
-            }
-        });
-    </script>
-
-</th:block>
-
 <div layout:fragment="content">
 
     <section class="h-100">
@@ -93,7 +78,7 @@
                         </div>
                         <div class="card-footer py-3 border-0">
                             <div class="text-center">
-                                계정이 이미 있으신가요? <a href="index.html" class="text-dark">로그인</a>
+                                계정이 이미 있으신가요? <a th:href="@{/members/login}" class="text-dark">로그인</a>
                             </div>
                         </div>
                     </div>
