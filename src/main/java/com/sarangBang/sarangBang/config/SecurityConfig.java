@@ -40,6 +40,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf()
                 .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
                 ;
+
+        http
+                .authorizeRequests()
+                .mvcMatchers("/", "/members/**", "/bootstrap/**", "/h2-console/**", "").permitAll()
+                .mvcMatchers("/members/**").hasRole("GUEST")
+                .anyRequest().authenticated()
+        ;
+
     }
 
     // 비밀번호 암호화 처리
